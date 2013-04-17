@@ -77,8 +77,17 @@
     <Compile Include="..\Sample.Model\Implementation\SimpleModel.cs">
       <Link>Model\SimpleModel.cs</Link>
     </Compile>
+    <Compile Include="..\Sample.Model\Implementation\SimplePresenter.cs">
+      <Link>Model\SimplePresenter.cs</Link>
+    </Compile>
     <Compile Include="..\Sample.Model\Interfaces\ISimpleModel.cs">
       <Link>Model\ISimpleModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Sample.Model\Interfaces\ISimplePresenter.cs">
+      <Link>Model\ISimplePresenter.cs</Link>
+    </Compile>
+    <Compile Include="..\Sample.Model\Interfaces\ISimpleView.cs">
+      <Link>Model\ISimpleView.cs</Link>
     </Compile>
     <Compile Include="BindingExtensions\LabelBindingExtenions.cs" />
     <Compile Include="BindingExtensions\TextFieldBindingExtenions.cs" />

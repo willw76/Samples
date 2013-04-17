@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Implementation\SimplePresenter.cs" />
     <Compile Include="Interfaces\ISimpleModel.cs" />
     <Compile Include="Implementation\SimpleModel.cs" />
+    <Compile Include="Interfaces\ISimplePresenter.cs" />
+    <Compile Include="Interfaces\ISimpleView.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
