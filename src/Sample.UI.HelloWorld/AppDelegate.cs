@@ -4,25 +4,40 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Sample.UI.Model.Implementation;
+using Sample.UI.Model.Interfaces;
 
 namespace Sample.UI.HelloWorld
 {
     [Register("AppDelegate")]
     public partial class AppDelegate : UIApplicationDelegate
     {
-        UIWindow window;
-        MyViewController viewController;
+        private UIWindow _window;
+        private MyViewController _viewController;
+        private ISimplePresenter Presenter { get; set; }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            window = new UIWindow(UIScreen.MainScreen.Bounds);
+            _window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-            viewController = new MyViewController();
-            window.RootViewController = viewController;
+            //_viewController = new MyViewController();
+            //ISimplePresenter presenter = new SimplePresenter();
+            InitPresenter();
 
-            window.MakeKeyAndVisible();
+            _window.RootViewController = _viewController;
+
+            _window.MakeKeyAndVisible();
 
             return true;
+        }
+
+        private void InitPresenter()
+        {
+            Presenter = new SimplePresenter
+                            {
+                                View = (_viewController = new MyViewController()),
+                            };
+            Presenter.Init();
         }
     }
 }
